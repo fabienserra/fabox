@@ -1,0 +1,187 @@
+.fabox {
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.fabox .framebox {
+    overflow: auto;
+    display: block;
+    position: relative;
+    background: #EEE;
+    width: 300px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    box-sizing: border-box;
+}
+
+.fabox .framebox .fa-spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #888;
+}
+
+.fabox.loading .framebox .fa-spinner {
+    display: block;
+}
+
+.fabox.fullgaz .framebox,
+.fabox.loading .framebox {
+    overflow: hidden;
+    background: transparent;
+}
+
+.fabox .close-box {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #DDD;
+    text-align: center;
+    line-height: 20px;
+    z-index: 5;
+}
+
+.fabox.no-control .close-box,
+.fabox.loading .close-box {
+    display: none;
+}
+
+.fabox .framebox .content-frame {
+    display: block;
+    opacity: 1;
+    position: relative;
+    -webkit-transition: opacity ease-in 0.3s;
+    -moz-transition: opacity ease-in 0.3s;
+    transition: opacity ease-in 0.3s;
+}
+
+.fabox.fullgaz .framebox .content-frame,
+.fabox.loading .framebox .content-frame {
+    position: absolute;
+}
+
+.fabox.fullgaz .framebox .content-frame.force-relative,
+.fabox.loading .framebox .content-frame.force-relative {
+    position: relative;
+}
+
+.fabox.loading .framebox .content-frame {
+    opacity: 0;
+}
+
+.fabox.fullgaz .framebox .content-frame {
+    background: transparent;
+}
+
+.fabox .framebox .content-frame .btn_actions {
+    display: block;
+    width: 100%;
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+.fabox .framebox .content-frame .btn_actions .btn-left,
+.fabox .framebox .content-frame .btn_actions .btn-right,
+.fabox .framebox .content-frame .btn_actions .btn-center {
+    display: block;
+    border-radius: 3px;
+    background-color: #358fca;
+    border: solid 1px #358fca;
+    color: #FFF;
+    -webkit-transition: all ease-in 0.2s;
+    -moz-transition: all ease-in 0.2s;
+    transition: all ease-in 0.2s;
+	cursor: pointer;
+    padding: 7px 15px;
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.fabox .btn-left {
+	float: left;
+}
+
+.fabox .btn-right {
+	float: right;
+}
+
+.fabox .btn-center {
+	margin: 0 auto;
+}
+
+.fabox .framebox .content-frame .btn_actions .btn-left:hover,
+.fabox .framebox .content-frame .btn_actions .btn-right:hover,
+.fabox .framebox .content-frame .btn_actions .btn-center:hover {
+	background-color: transparent;
+    color: #358fca;
+}
+
+.fabox .framebox .content-frame .btn_actions .btn-left:active,
+.fabox .framebox .content-frame .btn_actions .btn-right:active,
+.fabox .framebox .content-frame .btn_actions .btn-center:active {
+    background-color: #358fca;
+    color: #fff;
+}
+
+.fabox .framebox .content-frame h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #555;
+    margin-top: 0;
+    text-align: center;
+}
+
+.fabox.box-img .framebox {
+    overflow: visible;
+}
+
+.fabox .fabox-error-msg {
+	line-height: 25px;
+	padding-top: 12px;
+	margin: 0 auto;
+	width: 90%;
+	display: block;
+}
+
+.fabox .fabox-alert,
+.fabox .fabox-confirm {
+	width: 90%;
+	margin: 0 auto;
+    padding: 15px 0;
+	display: block;
+}
+
+@media only screen and (max-width: 400px) {
+    
+    .fabox .btn-left,
+    .fabox .btn-right {
+        float: none;
+        width: 100%;
+        margin: 15px 0 0 0;
+    }
+}
