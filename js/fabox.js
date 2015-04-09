@@ -157,6 +157,9 @@
                         $(scope).find('.btn-center').unbind();
                         $(scope).find('.btn-center').bind('click', function() {
                             $(scope).fabox('close', null);
+                            if( typeof( args.callback ) != 'undefined' ) {
+                                args.callback();
+                            }
                         });
                     break;
                     case 'confirm':
